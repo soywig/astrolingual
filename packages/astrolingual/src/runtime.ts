@@ -56,6 +56,15 @@ export namespace Astrolingual {
             };
           }
 
+          if (prop === "toJSON") {
+            return () => {
+              const value = resolveString(prefix, [], retrievedLocaleData);
+              return value
+                ? String(value)
+                : String(missing(prefix, usedLocale));
+            };
+          }
+
           return createProxy([...prefix, String(prop)]);
         },
 
