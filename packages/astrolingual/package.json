@@ -1,0 +1,34 @@
+{
+  "name": "astrolingual",
+  "description": "Astro integration for i18n",
+  "version": "0.1.0",
+  "homepage": "https://github.com/soywig/astrolingual#readme",
+  "type": "module",
+  "scripts": {
+    "build": "tsc --project tsconfig.json",
+    "dev": "tsc --project tsconfig.json --watch --preserveWatchOutput"
+  },
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/integration.d.ts",
+      "import": "./dist/integration.js"
+    },
+    "./runtime": {
+      "types": "./dist/runtime.d.ts",
+      "import": "./dist/runtime.js"
+    }
+  },
+  "keywords": [
+    "withastro",
+    "i18n"
+  ],
+  "devDependencies": {
+    "typescript": "^7.0.2"
+  },
+  "dependencies": {
+    "jsonc-parser": "^3.3.1"
+  }
+}

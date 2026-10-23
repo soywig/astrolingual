@@ -1,0 +1,82 @@
+{
+  "hero": {
+    "meaning": "**adjective** _(linguistics, science fiction)_ Relating to the study of a language originating from alien species.",
+    "synonyms": "**Synonyms:** xenolingual, exolingual",
+    "anAstroIntegration": "AN ASTRO INTEGRATION"
+  },
+  "features": {
+    "title": "features",
+    "variables": {
+      "title": "variables",
+      "description": "positional slots like $$0 and $$1. same string, any word order, any language.",
+      "example": "[soywig]($0) is listening to **$1** by $2",
+      "codeExample": [
+        "\"listening\": \"\\[soywig\\]\\($$0\\) is listening to \\*\\*$$1\\*\\* by $$2\"",
+        "t.listening(\"user/soywig\", \"The Happy Dictator (feat. Sparks), \"Gorillaz\")"
+      ]
+    },
+    "plurals": {
+      "title": "plurals",
+      "description": "languages with fancier rules just work.",
+      "example": {
+        "$0": {
+          "one": "$0 minute ago",
+          "other": "$0 minutes ago"
+        }
+      },
+      "codeExample": [
+        "&#123;\n&nbsp;&nbsp;\"$$0\": &#123;\n&nbsp;&nbsp;&nbsp;&nbsp;\"one\": \"$$0 minute ago\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"other\": \"$$0 minutes ago\"\n&nbsp;&nbsp;&#125;\n&#125;",
+        "t.minutesAgo(0)\nt.minutesAgo(1)\nt.minutesAgo(5)\nt.minutesAgo(24)"
+      ]
+    },
+    "tinyMarkdown": {
+      "title": "tiny markdown",
+      "description": "supports some markdown quirks. emphasis, strong and links. customize them from your own css.",
+      "example": "*emphasis*, **strong**, _also emphasis_, __also strong__ and a [link]($0).",
+      "codeExample": "\\*emphasis\\*, \\*\\*strong\\*\\*, \\_also emphasis\\_, \\_\\_also strong\\_\\_, and a \\[link\\]\\(https://astro.build\\)"
+    },
+    "dollarSigns": {
+      "title": "dollar signs",
+      "description": "type $$$$ (or a dollar plus a space) for a literal dollar. need a real space after it? use two.",
+      "examples": [
+        {
+          "preview": "that costs $$$0",
+          "code": "that costs $$$$$$0"
+        },
+        {
+          "preview": "that costs $ $0",
+          "code": "that costs $$ $$0"
+        },
+        {
+          "preview": "that costs $20",
+          "code": "that costs $$20"
+        },
+        {
+          "preview": "that costs $0",
+          "code": "that costs $$0"
+        }
+      ]
+    },
+    "lineBreaks": {
+      "title": "line breaks",
+      "description": "a single string with newlines in your json.",
+      "example": "roses are red,\nviolets are blue,\nthis is one string\nand it shows as four lines.",
+      "codeExample": "roses are red,\\nviolets are blue,\\nthis is one string\\nand it shows as four lines."
+    },
+    "missingKeys": {
+      "title": "missing keys",
+      "description": "typo in a key? you see the key itself (plus a warning in the terminal) instead of a blank hole.",
+      "example": []
+    },
+    "more": "more info"
+  },
+  "realSites": {
+    "title": "real sites using it",
+    "soywigSpace": {
+      "title": "[soywig.space](https://soywig.space)",
+      "description": "personal website.",
+      "alt": "Screenshot of the soywig.space website."
+    }
+  },
+  "footer": "MADE WITH ❤ AND ASTROLINGUAL BY @soywig"
+}

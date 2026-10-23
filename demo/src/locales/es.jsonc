@@ -1,0 +1,81 @@
+{
+  "hero": {
+    "meaning": "(inglés) **adjectivo** _(lengua, ciencia ficción)_ Relacionado con el estudio de un idioma de origen alienígena.",
+    "synonyms": "**Sinónimos:** xenolingual, exolingual",
+    "anAstroIntegration": "UNA INTEGRACIÓN DE ASTRO"
+  },
+  "features": {
+    "title": "características",
+    "variables": {
+      "title": "variables",
+      "description": "huecos posicionales como $$0 y $$1. misma cadena, cualquier orden, cualquier idioma.",
+      "example": "[soywig]($0) está escuchando **$1** de $2",
+      "codeExample": [
+        "\"escuchando\": \"\\[soywig\\]\\($$0\\) está escuchando \\*\\*$$1\\*\\* de $$2\"",
+        "t.escuchando(\"user/soywig\", \"The Happy Dictator (feat. Sparks), \"Gorillaz\")"
+      ]
+    },
+    "plurals": {
+      "title": "plurales",
+      "description": "los idiomas con reglas más específicas funcionan sin complicaciones.",
+      "example": {
+        "$0": {
+          "one": "hace $0 minuto",
+          "other": "hace $0 minutos"
+        }
+      },
+      "codeExample": [
+        "&#123;\n&nbsp;&nbsp;\"$$0\": &#123;\n&nbsp;&nbsp;&nbsp;&nbsp;\"one\": \"hace $$0 minuto\",\n&nbsp;&nbsp;&nbsp;&nbsp;\"other\": \"hace $$0 minutos\"\n&nbsp;&nbsp;&#125;\n&#125;",
+        "t.minutesAgo(0)\nt.minutesAgo(1)\nt.minutesAgo(5)\nt.minutesAgo(24)"
+      ]
+    },
+    "tinyMarkdown": {
+      "title": "mini markdown",
+      "description": "soporta múltiples características de markdown. cursiva, negrita y enlaces. personalízalas desde tu css.",
+      "example": "*cursiva*, **negrita**, _cursiva otra vez_, __negrita otra vez__ y un [enlace]($0).",
+      "codeExample": "\\*cursiva\\*, \\*\\*negrita\\*\\*, \\_cursiva otra vez\\_, \\_\\_negrita otra vez\\_\\_, y un \\[enlace\\]\\(https://astro.build\\)"
+    },
+    "dollarSigns": {
+      "title": "símbolos de dólar",
+      "description": "escribe $$$$ (o un dólar y un espacio) para un dólar literal. quieres un espacio después? pon dos.",
+      "examples": [
+        {
+          "preview": "cuesta $0$$",
+          "code": "cuesta $$0$$$$"
+        },
+        {
+          "preview": "cuesta $0$ ",
+          "code": "cuesta $$0$$ "
+        },
+        {
+          "preview": "cuesta $20",
+          "code": "cuesta $$20"
+        },
+        {
+          "preview": "cuesta $0",
+          "code": "cuesta $$0"
+        }
+      ]
+    },
+    "lineBreaks": {
+      "title": "saltos de línea",
+      "description": "una sola cadena con saltos de línea en tu json.",
+      "example": "caminante, son tus huellas\nel camino y nada más;\ncaminante, no hay camino,\nse hace camino al andar.",
+      "codeExample": "caminante, son tus huellas,\\nel camino y nada más;\\ncaminante, no hay camino,\\nse hace camino al andar."
+    },
+    "missingKeys": {
+      "title": "claves faltantes",
+      "description": "si cometes cualquier error al escribir una clave, verás esa misma clave (además de un aviso en la terminal) en lugar de un hueco en blanco."
+    },
+    "more": "más información"
+  },
+  "realSites": {
+    "title": "sitios reales que lo usan",
+    "soywigSpace": {
+      "title": "[soywig.space](https://soywig.space)",
+      "description": "sitio web personal.",
+      "alt": "Captura de pantalla del sitio web \"soywig.space\""
+    }
+  },
+  "footer": "HECHO CON ❤ Y ASTROLINGUAL POR @soywig"
+}

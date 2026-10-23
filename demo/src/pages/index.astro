@@ -1,0 +1,285 @@
+---
+import Image from "astro/components/Image.astro";
+import { Astrolingual } from "astrolingual/runtime";
+import Card from "../components/Card.astro";
+import AstrolingualTitle from "../images/astrolingual.svg";
+import SoywigSpace from "../images/soywig.space.webp";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const t = Astrolingual.use(Astro.currentLocale);
+---
+
+<BaseLayout>
+  <div
+    class="w-full overflow-x-hidden min-h-screen bg-white dark:bg-black text-black dark:text-white"
+  >
+    <div class="flex flex-col w-full min-h-fit h-screen max-h-288">
+      <header class="border-y">
+        <div
+          class="flex w-full max-w-7xl border-x justify-evenly p-6 mx-auto font-mono text-sm"
+        >
+          <a href="/" class={Astro.currentLocale === "en" ? "text-red-500" : ""}
+            >english</a
+          >
+          <a
+            href="/es"
+            class={Astro.currentLocale === "es" ? "text-red-500" : ""}
+            >español</a
+          >
+        </div>
+      </header>
+      <div class="border-b flex-1 flex flex-col">
+        <div class="w-full max-w-7xl border-x mx-auto border-b text-9xl">
+          <Image src={AstrolingualTitle} alt="" class="w-full dark:invert" />
+        </div>
+        <div
+          class="w-full max-w-7xl border-x px-12 py-8 gap-8 flex flex-col mx-auto flex-1"
+        >
+          <div class="text-2xl">
+            <p>
+              {t.hero.meaning}
+            </p>
+            <p class="italic opacity-50">{t.hero.synonyms}</p>
+          </div>
+          <div class="flex justify-center w-full">
+            <div class="bg-neutral-100 dark:bg-neutral-900 px-3 py-2 border">
+              <span class="font-mono">npm install astrolingual</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="border-b">
+        <div
+          class="w-full max-w-7xl border-x px-12 py-8 font-mono text-center m-auto"
+        >
+          {t.hero.anAstroIntegration}
+        </div>
+      </div>
+    </div>
+    <div class="border-b">
+      <h2
+        class="w-full max-w-7xl border-x m-auto font-extralight sm:font-thin text-5xl sm:text-8xl lg:text-9xl p-6"
+      >
+        {t.features.title}
+      </h2>
+    </div>
+    <div class="border-b">
+      <div
+        class="w-full max-w-7xl border-x m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-black dark:bg-white *:bg-white *:dark:bg-black [&_a]:underline"
+      >
+        <Card
+          title={t.features.variables.title}
+          description={t.features.variables.description}
+        >
+          <div class="bg-neutral-100 dark:bg-neutral-900 border px-4 py-3">
+            {
+              t.features.variables.example(
+                "https://last.fm/user/soywig",
+                "The Happy Dictator (feat. Sparks)",
+                "Gorillaz",
+              )
+            }
+          </div>
+          <div
+            class="bg-neutral-200 dark:bg-neutral-800 text-sm font-mono px-4 py-3 border-x border-b"
+          >
+            {t.features.variables.codeExample[0]}
+          </div>
+          <div
+            class="bg-neutral-200 dark:bg-neutral-800 text-sm font-mono px-4 py-3 border-x border-b"
+          >
+            {t.features.variables.codeExample[1]}
+          </div>
+        </Card>
+        <Card
+          title={t.features.plurals.title}
+          description={t.features.plurals.description}
+        >
+          <div class="flex gap-2 flex-wrap mb-4">
+            <div class="px-4 py-3 bg-neutral-100 dark:bg-neutral-900 border">
+              {t.features.plurals.example(0)}
+            </div>
+            <div class="px-4 py-3 bg-neutral-100 dark:bg-neutral-900 border">
+              {t.features.plurals.example(1)}
+            </div>
+            <div class="px-4 py-3 bg-neutral-100 dark:bg-neutral-900 border">
+              {t.features.plurals.example(24)}
+            </div>
+            <div class="px-4 py-3 bg-neutral-100 dark:bg-neutral-900 border">
+              {t.features.plurals.example(5)}
+            </div>
+          </div>
+          <div
+            class="bg-neutral-200 dark:bg-neutral-800 text-sm font-mono px-4 py-3 border"
+          >
+            {t.features.plurals.codeExample[0]}
+          </div>
+          <div
+            class="bg-neutral-200 dark:bg-neutral-800 text-sm font-mono px-4 py-3 border-x border-b"
+          >
+            {t.features.plurals.codeExample[1]}
+          </div>
+        </Card>
+        <Card
+          title={t.features.tinyMarkdown.title}
+          description={t.features.tinyMarkdown.description}
+        >
+          <div class="bg-neutral-100 dark:bg-neutral-900 border px-4 py-3">
+            {t.features.tinyMarkdown.example("https://astro.build")}
+          </div>
+          <div
+            class="bg-neutral-200 dark:bg-neutral-800 text-sm font-mono px-4 py-3 border-x border-b"
+          >
+            {t.features.tinyMarkdown.codeExample}
+          </div>
+        </Card>
+        <Card
+          title={t.features.dollarSigns.title}
+          description={t.features.dollarSigns.description}
+        >
+          <input
+            type="number"
+            id="dollar-signs-amount"
+            class="px-3 py-2 border outline-0 w-full mb-4"
+            value="20"
+            placeholder="amount"
+          />
+          <div class="grid grid-cols-2 gap-2">
+            <div>
+              <div
+                class="bg-neutral-100 dark:bg-neutral-900 px-4 py-2 border"
+                data-amount-preview
+              >
+                {t.features.dollarSigns.examples[0].preview(20)}
+              </div>
+              <div
+                class="bg-neutral-200 dark:bg-neutral-800 px-4 py-2 text-sm font-mono border-x border-b"
+              >
+                {t.features.dollarSigns.examples[0].code}
+              </div>
+            </div>
+            <div>
+              <div
+                class="bg-neutral-100 dark:bg-neutral-900 px-4 py-2 border"
+                data-amount-preview
+              >
+                {t.features.dollarSigns.examples[1].preview(20)}
+              </div>
+              <div
+                class="bg-neutral-200 dark:bg-neutral-800 px-4 py-2 text-sm font-mono border-x border-b"
+              >
+                {t.features.dollarSigns.examples[1].code}
+              </div>
+            </div>
+            <div>
+              <div
+                class="bg-neutral-100 dark:bg-neutral-900 px-4 py-2 border"
+                data-amount-preview
+              >
+                {t.features.dollarSigns.examples[2].preview(20)}
+              </div>
+              <div
+                class="bg-neutral-200 dark:bg-neutral-800 px-4 py-2 text-sm font-mono border-x border-b"
+              >
+                {t.features.dollarSigns.examples[2].code}
+              </div>
+            </div>
+            <div>
+              <div
+                class="bg-neutral-100 dark:bg-neutral-900 px-4 py-2 border"
+                data-amount-preview
+              >
+                {t.features.dollarSigns.examples[3].preview(20)}
+              </div>
+              <div
+                class="bg-neutral-200 dark:bg-neutral-800 px-4 py-2 text-sm font-mono border-x border-b"
+              >
+                {t.features.dollarSigns.examples[3].code}
+              </div>
+            </div>
+          </div>
+        </Card>
+        <Card
+          title={t.features.lineBreaks.title}
+          description={t.features.lineBreaks.description}
+        >
+          <div class="bg-neutral-100 dark:bg-neutral-900 border px-4 py-3">
+            {t.features.lineBreaks.example}
+          </div>
+          <div
+            class="bg-neutral-200 dark:bg-neutral-800 border-x border-b font-mono text-sm px-4 py-3"
+          >
+            {t.features.lineBreaks.codeExample}
+          </div>
+        </Card>
+        <Card
+          title={t.features.missingKeys.title}
+          description={t.features.missingKeys.description}
+        >
+          <div class="bg-neutral-100 dark:bg-neutral-900 border px-4 py-3">
+            {t.missing.thisKeyDoesNotExist}
+          </div>
+        </Card>
+      </div>
+    </div>
+    <script>
+      const amountInput = document.querySelector<HTMLInputElement>(
+        "#dollar-signs-amount",
+      );
+      const previews = Array.from(
+        document.querySelectorAll<HTMLElement>("[data-amount-preview]"),
+      );
+      const initialAmount = "20";
+      const initialPreviews = previews.map(
+        (preview) => preview.textContent ?? "",
+      );
+
+      amountInput?.addEventListener("input", () => {
+        const amount = amountInput.value || "0";
+
+        previews.forEach((preview, index) => {
+          preview.textContent = initialPreviews[index].replaceAll(
+            initialAmount,
+            amount,
+          );
+        });
+      });
+    </script>
+    <div class="border-b">
+      <div class="max-w-7xl border-x m-auto px-12 py-8 text-center font-mono">
+        <a>{t.features.more}</a>
+      </div>
+    </div>
+    <div class="border-b">
+      <h2
+        class="w-full max-w-7xl border-x m-auto font-extralight sm:font-thin text-5xl sm:text-8xl lg:text-9xl p-6"
+      >
+        {t.realSites.title}
+      </h2>
+    </div>
+    <div class="border-b">
+      <div
+        class="w-full max-w-7xl border-x m-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-black dark:bg-white *:bg-white *:dark:bg-black [&_a]:underline [&_a]:decoration-2 [&_a]:underline-offset-4"
+      >
+        <Card
+          title={t.realSites.soywigSpace.title}
+          description={t.realSites.soywigSpace.description}
+        >
+          <Image
+            src={SoywigSpace}
+            alt={t.realSites.soywigSpace.alt}
+            class="w-full aspect-16/10 border"
+          />
+        </Card>
+        <div class="hidden sm:block col-span-1 lg:col-span-2"></div>
+      </div>
+    </div>
+    <footer class="border-b">
+      <div
+        class="max-w-7xl border-x m-auto px-12 py-8 text-center font-mono min-h-96 h-screen max-h-288 flex justify-center items-center"
+      >
+        <p>{t.footer}</p>
+      </div>
+    </footer>
+  </div>
+</BaseLayout>
