@@ -5,7 +5,15 @@
 
 Astrolingual is a really simple Astro integration for internationalization (i18n).
 
-## 📦 Installation & Setup
+## 📦 Installation
+
+Install Astrolingual using npm:
+
+```bash
+npm install astrolingual
+```
+
+## 🚀 Setup
 
 After installation, add the integration to your `astro.config.mjs` file and configure the locales you want to use.
 
