@@ -1,7 +1,4 @@
 declare module "virtual:astrolingual" {
-  const config: {
-    defaultLocale: string;
-    locales: Record<string, any>;
-  };
+  const config: import("./runtime.js").AstrolingualConfig;
   export default config;
 }

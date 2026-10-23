@@ -11,9 +11,9 @@ import { readLocale } from "./locale-files.js";
 export function buildSchemaTypesDeclaration(file: string): string {
   const schema = JSON.stringify(readLocale(file));
   return `
-    import "astrolingual/runtime";
+    import "astrolingual/runtime/types/Register";
 
-    declare module "astrolingual/runtime" {
+    declare module "astrolingual/runtime/types/Register" {
       interface Register {
         schema: ${schema};
       }

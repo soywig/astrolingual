@@ -19,6 +19,10 @@
     "./runtime": {
       "types": "./dist/runtime.d.ts",
       "import": "./dist/runtime.js"
+    },
+    "./runtime/types/Register": {
+      "types": "./dist/runtime/types/Register.d.ts",
+      "import": "./dist/runtime/types/Register.js"
     }
   },
   "keywords": [

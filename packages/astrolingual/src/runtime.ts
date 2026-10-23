@@ -3,6 +3,8 @@ import { missing, resolveString } from "./runtime/resolver.js";
 import { LocaleTree } from "./runtime/types/LocaleTree.js";
 import { baseLanguage, normalizeLocale } from "./shared/utilities.js";
 
+export type { AstrolingualConfig } from "./runtime/types/AstrolingualConfig.js";
+
 export namespace Astrolingual {
   export function use(locale?: string): LocaleTree {
     const usedLocale = locale ?? config.defaultLocale;
