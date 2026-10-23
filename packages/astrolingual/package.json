@@ -1,7 +1,7 @@
 {
   "name": "astrolingual",
   "description": "Astro integration for i18n",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "homepage": "https://github.com/soywig/astrolingual#readme",
   "type": "module",
   "scripts": {
